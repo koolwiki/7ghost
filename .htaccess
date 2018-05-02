@@ -5,3 +5,8 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^(.*)$ - [S=1]
 RewriteRule . /index.php [L]
+AuthName "Restricted Area"
+AuthType Basic
+AuthUserFile /app/web/.htpasswd
+AuthGroupFile /dev/null
+require valid-user
